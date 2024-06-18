@@ -1,12 +1,126 @@
 <!DOCTYPE html>
-<html>
+<html lang="pl">
 <head>
-    <title>Strona Nerdshitu UwU UwU</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>Main</title>
 </head>
 <body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
-link do innej podstrony:
-<a href="test.html">aaaaaaaaaaaaaaaaaaaaaaa</a>
+    <div id="container">
+        <div id="middle">
+            <div id="Player_Lvl">
+                <!--ZROBIĆ T TABELĄ, pierwszy rząd jest zapisany, drugi wygenerowany z danych
+                Border widoczny, czarny cienki. Background t scroll cienki i długi-->
+                Level Postaci: <br>
+                PDST Stata: <br>
+                ATK: <br>
+                MAG: <br>
+                DEF: <br>
+                RES: <br>
+                INC: <br>
+                SKL: <br>
+                LCK: <br>
+                CHAR
+            </div>
+            <div id="Mp_Hp">
+            <!--zmienne pobrane z serwera    Max_MP, Max_HP, MP, HP-->
+                <table class="center_XP">
+                    <tr>
+                        <td>Mana</td>
+                        <td>45</td>
+                    </tr>
+                    <tr>
+                        <td> .   </td>
+                    </tr>
+                    <tr>
+                        <td>Health</td>
+                        <td>50</td>
+                    </tr>
+                    <tr>
+                        <td>   .   </td>
+                    </tr>
+                </table>
+                <forms>
+                <!--
+                Text liczba na ile dodać (ujemne liczby też) <br>
+                Wybierz Type [Fire, Water, Flat, Normal, Almighty, Critical, etc etc] i Guzik Submit
+                --> 
+                    <input type="number" id="DMG_number" name="DMG_number"> <br>
+                    <input type="" id="DMG_type" name="DMG_type"> <!--TU ZNALEŚĆ BUTTON NA KILKA WYBORÓW TYLKO-->
+                    <input type="submit" id="DMG_submit" name="DMG_submit">
+                </forms>
+            </div>
+            <div id="EXP">
+                <table id="EXPY">
+                    <tr>
+                        <th>Name </th>
+                        <th>Rank </th>
+                        <th>Amount </th>
+                        <th><!--BLANK--></th>
+                        <th>Next Rank </th>
+                        <th>Brakuje do rangi </th>
+                    </tr>
+                    <tr>
+                        <td>Armor</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Riding</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Flying</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Bow</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Dagger</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Axe</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Lance</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Elemental Magic</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Light Magic</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Dark Magic</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Staff Magic</td>
+                        <td></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div id="footer">
+            <div id="menu">
+                <table class="center_menu">
+                    <tr>
+                        <th><img id="icon" src="icon.png"></th>
+                        <th><img id="icon" src="icon.png"></th>
+                    </tr>
+                    <tr>
+                        <td>Icon 1</td>
+                        <td>Icon 2</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

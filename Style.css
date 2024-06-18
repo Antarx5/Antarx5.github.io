@@ -1,0 +1,75 @@
+:root{
+    --box-BG-color: #E3C68C80;
+    --box-font: black;
+}
+html, body {
+    margin:0;
+    padding:0;
+    height:100%;
+    background-color: #000000;
+}
+#container{
+    min-height:100%;
+    position:relative;
+}
+
+#middle{ /*zmienna cześć stron */
+    padding:10px;
+    background-color: #000000;
+    color: var(--box-font);
+}
+#Player_Lvl{
+    width: 48.5%;
+    margin: 2px;
+    padding: 5px;
+    float: left;
+    background-color: var(--box-BG-color);
+}
+#Mp_Hp{
+    width: 30%;
+    margin: 2px;
+    padding: 5px;
+    float: right;
+    background-color: var(--box-BG-color);
+}
+.center_XP{
+    margin-left: auto;
+    margin-right: auto;
+    border-spacing: 5px 3px;
+    border-style: dashed;
+}
+#EXP{
+    width: 48.5%;
+    margin: 2px;
+    padding: 5px;
+    float: right;
+    background-color: var(--box-BG-color);
+}
+
+
+#footer{ /*cały DIV od MENU */
+    clear:both; 
+    bottom:20px;
+    width:100%;
+    height:80px;
+    display: flex;
+    justify-content: center;
+    bottom: 10px;
+    position: sticky;
+}
+#menu{ /*widoczna część DIV'a */
+    padding: 5px;
+    width: 80%;
+    background-color: #880808;
+    border-radius: 50px;
+}
+.center_menu{ /*wyrównaj tabele w której są ikony i napisy */
+    margin-left: auto;
+    margin-right: auto;
+    border-spacing: 20px 5px;
+  }
+
+#icon{ /*Icony na Menu*/
+    width: 32px;
+    height: 32px;
+}
