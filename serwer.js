@@ -1,57 +1,44 @@
-const express = require('express');
-const bodyParser = require('body-parser');
-const mysql = require('mysql');
-const config = require('./config');
+var mysql = require("mysql");
 
-const app = express();
-//const port = 3000;
+        var hostname = "fc8.h.filess.io";
+        var database = "Nerdshit_highestgo";
+        var port = "3307";
+        var 
+        username
+        = 
+        "Nerdshit_highestgo"
+        ;
 
-app.use(bodyParser.json());
+        var 
+        password
+        = 
+        "6abe9d934c104a4a0c39e63a6b2d056dfdcb18a5"
+        ;
 
-const pool = mysql.createPool({
-    connectionLimit: 10,
-    host: config.hostname,
-    user: config.username,
-    password: config.password,
-    database: config.database,
-    port: config.port
-});
+        var 
+        con
+        = mysql.createConnection({
+        host: hostname,
+        user: username,
+        password,
+        database,
+        port,
+        })
+        ;
 
-app.post('/execute-query', (req, res) => {
-    const query = req.body.query;
+        con.connect(function (err) {
+        if (err) throw err
+        ;
 
-    pool.query(query, (error, results) => {
-        if (error) {
-            return res.status(500).send('Error executing query: ' + error);
-        }
+        console.log("Connected!")
+        ;
 
-        if (results.length > 0) {
-            let html = '<table border="1"><tr>';
-            for (const header in results[0]) {
-                html += `<th>${header}</th>`;
-            }
-            html += '</tr>';
+        })
+        ;
 
-            results.forEach(row => {
-                html += '<tr>';
-                for (const column in row) {
-                    let cellData = row[column];
-                    if (typeof cellData === 'string') {
-                        cellData = cellData.replace(/<br>/g, '\n');
-                    }
-                    html += `<td>${cellData}</td>`;
-                }
-                html += '</tr>';
-            });
+        con.query("SELECT * FROM _party").on("result", function (row) {
+        console.log(row)
+        ;
 
-            html += '</table>';
-            res.send(html);
-        } else {
-            res.send('<p>No results found.</p>');
-        }
-    });
-});
-
-app.listen(port, () => {
-    console.log(`Server running at http://localhost:${port}/`);
-});
+        })
+        ;
