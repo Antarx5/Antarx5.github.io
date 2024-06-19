@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
     <title>Execute SQL Query</title>
 </head>
 <body>
@@ -11,25 +10,73 @@
     <div id="result"></div>
 
     <script>
-        document.getElementById('execute-query').addEventListener('click', function() {
-            const new_query = "SELECT * FROM _party"; // Przykładowe zapytanie SQL
+        
+        var 
+        mysql
+        = require(
+        "mysql"
+        )
+        ;
 
-            fetch('http://localhost:3000/execute-query', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ query: new_query })
-            })
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('result').innerHTML = data;
-            })
-            .catch(error => {
-                console.error('Error:', error);
-                document.getElementById('result').innerHTML = '<p>An error occurred</p>';
-            });
-        });
+        var 
+        hostname
+        = 
+        "fc8.h.filess.io"
+        ;
+
+        var 
+        database
+        = 
+        "Nerdshit_highestgo"
+        ;
+
+        var 
+        port
+        = 
+        "3307"
+        ;
+
+        var 
+        username
+        = 
+        "Nerdshit_highestgo"
+        ;
+
+        var 
+        password
+        = 
+        "6abe9d934c104a4a0c39e63a6b2d056dfdcb18a5"
+        ;
+
+        var 
+        con
+        = mysql.createConnection({
+        host: hostname,
+        user: username,
+        password,
+        database,
+        port,
+        })
+        ;
+
+        con.connect(function (err) {
+        if (err) throw err
+        ;
+
+        console.log("Connected!")
+        ;
+
+        })
+        ;
+
+        con.query("SELECT * FROM _party").on("result", function (row) {
+        console.log(row)
+        ;
+
+        })
+        ;
+
+
         // executeQuery("SELECT * FROM _party");
 
         
