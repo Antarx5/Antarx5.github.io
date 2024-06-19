@@ -1,4 +1,4 @@
-var mysql = require("mysql");
+var mysql = require('mysql2/promise');
 
 var hostname = "fc8.h.filess.io";
 var database = "Nerdshit_highestgo";
